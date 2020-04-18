@@ -1,0 +1,142 @@
+.container{
+  width: 960px;
+  margin: 0 auto;
+}
+header {
+  padding: 3rem;
+  background:#333;
+  text-align:center;
+}
+header h1 {
+  font-size: 3rem;
+}
+header a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+nav{
+  max-width: 100%;
+  height:50px;
+  background-color:rgb(253, 147, 48);
+  text-align: right;
+}
+nav h1 {
+  font-size: 2rem;
+}
+nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.head{
+    width: 100%;
+    background-color: beige;
+    padding: 30px;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.list > div{
+    margin: 10px;
+    width: 300px;
+    height: 100%;
+    background-color: burlywood;
+}
+.res-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.res-image-show{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.btn-view{
+    width: 120px;
+    height: 50px;
+    background-color: cadetblue;
+}
+.comment{
+    width: 200px;
+    height: 50px;
+}
+.input-btn{
+    width: 80px;
+    height: 50px;
+    background-color: beige;
+}
+
+/* Start */
+div.stars {
+  width: 270px;
+  display: inline-block;
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+.show-comment{
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid violet;
+}
+.star{
+  font-size: 30px;
+  color: rgb(255, 174, 0);
+}
+.type{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.type > div {
+  width: 200px;
+  height: 100%;
+}
+.type-btn{
+  width: 200px;
+  height: 100px;
+  background-color: teal;
+  transition: 0.5s;
+}
+.type-btn:hover{
+  background-color: tomato;
+}
+
+
+
+
+
