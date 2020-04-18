@@ -11,7 +11,9 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />    
 </head>
 <body>
 
@@ -20,17 +22,23 @@
                 <h1> <a href="index.php"> HOME </a> </h1> 
             </div>
     </nav>
-     
-    <header>
-        <div class ="container">
-            <div class="logo">
-                <h1> <a href="index.php"> Pom Ma Review </a> </h1> 
+    
+    <div class="container">
+			<h2 align="center">Search Restaurant Name</h2><br />
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon">Search</span>
+					<input type="text" name="search_text" id="search_text" placeholder="Search by Customer Details" class="form-control" />
+				</div>
+			</div>
+			<br />
+			<div class="result">
+                <div id="result" ></div>
             </div>
-        <from action="search.php" method="get" enctype="multipart/from-data">
-            <input type ="text" name="value" placeholder="search topic" size="25">
-            <input type="submit" name="search" value="search">
-        </from>
-    </header>
+		</div>
+		<div style="clear:both"></div>
+		<br />
+    
     
     <div>
         <div class="head">
@@ -68,6 +76,12 @@
                 </form>
             </div>
         </div>
+
+        <!-- search -->
+
+        
+
+        <!-- ranking -->
 
         <hr/>
         <h1>Top 10 Ranking</h1>
@@ -221,4 +235,33 @@
 
     <nav> </nav>
 </body>
+<script>
+$(document).ready(function(){
+	load_data();
+	function load_data(query)
+	{
+		$.ajax({
+			url:"./fetch.php",
+			method:"post",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+		});
+	}
+	
+	$('#search_text').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();			
+		}
+	});
+});
+</script>
 </html>
